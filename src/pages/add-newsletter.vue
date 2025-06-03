@@ -55,6 +55,7 @@ function handleSubmit() {
             <QuillEditor
               v-model:content="body"
               theme="snow"
+              
               content-type="html"
               style="height: 20rem; border: 1px solid #ddd;"
               placeholder="Write something..."

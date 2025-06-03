@@ -19,6 +19,7 @@ const image = ref('')
 
 const categories = ref([])
 const id = router.currentRoute.value.query.article
+
 console.log(id)
 
 const fetchArticles = async () => {

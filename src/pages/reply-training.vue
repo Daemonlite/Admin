@@ -7,11 +7,24 @@ import { useToast } from "vue-toast-notification"
 
 const router = useRouter()
 const isLoading = ref(false)
+const contact = router.currentRoute.value.query.demo
 const userMail = router.currentRoute.value.query.mail
 const message = ref('')
 const subject = ref('')
 const contacts = ref({})
 const toast = useToast()
+
+const fetchContacts = () => {
+  axios
+    .get(`${baseUrl}/forms/contact/${contact}`)
+    .then(response => {
+      contacts.value = response.data
+      console.log(response.data)
+    })
+    .catch(error => {
+      console.log(error)
+    })
+}
 
 const replyContact = () => {
   isLoading.value = true
@@ -22,7 +35,7 @@ const replyContact = () => {
   }).then(res=>{
     toast.success('Reply sent successfully')
     console.log(res.data)
-    router.push({ name: 'apps-quotes' })
+    router.push({ name: 'apps-trainingForm' })
   }).catch(err=>{
     console.log(err.data)
     toast.error(err.response.data.error)

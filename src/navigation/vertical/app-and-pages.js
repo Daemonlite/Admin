@@ -7,6 +7,11 @@ export default [
     to: 'apps-trainings',
   },
   {
+    title: 'Training Submissions',
+    icon: { icon: 'mdi-school' },
+    to: 'apps-trainingForm',
+  },
+  {
     title: 'Contacts',
     icon: { icon: 'mdi-book-alert-outline' },
     to: 'apps-contact',

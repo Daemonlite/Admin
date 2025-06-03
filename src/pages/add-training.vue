@@ -39,8 +39,20 @@ function handleSubmit() {
   <VCard
     flat
     class="pa-4"
-    title="Add Training"
+    title=""
   >
+    <div class="d-flex justify-space-between">
+      <h2 class="text-h5">
+        Add Training
+      </h2>
+      <VBtn
+        class="mb-4"
+        color="primary"
+        @click="router.push({ name: 'upload-calender' })"
+      >
+        Upload Training Calender
+      </VBtn>
+    </div>
     <VForm @submit.prevent="handleSubmit">
       <VRow>
         <VCol cols="12">

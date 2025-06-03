@@ -9,7 +9,7 @@ const { header, payload } = useJwt(encodedJwt)
 
 export let userData = payload.value
 
-export const baseUrl = " http://127.0.0.1:7000"
+export const baseUrl = import.meta.BACKEND_BASE_URL
 
 export const formatDate = timestamp => {
   const date = new Date(timestamp)
